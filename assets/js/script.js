@@ -8,44 +8,48 @@ function clickBoton(){
     console.log(nombreGasto);
     console.log(valorGasto);
     
-    // listaNombresGastos.push(nombreGasto);
-    // listaValoresGastos.push(valorGasto);
-    alert ('clic ususario');
+    listaNombresGastos.push(nombreGasto);
+    listaValoresGastos.push(valorGasto);
+    console.log(nombreGasto);
+    console.log(valorGasto);
+    //alert ('clic ususario');
+    actualizarListasGastos();
 }
 
-// function actualizarListasGastos(){
-//     //1.agrega en una lista los gastos registrados
-//     const listaElementos = document.getElementById('listaDeGastos');
-//     //2.suma el total de los gastos
-//     const totalElementos = document.getElementById('totalGastos');
+function actualizarListasGastos(){
+    //1.agrega en una lista los gastos registrados
+    const listaElementos = document.getElementById('listaDeGastos');
+    //2.suma el total de los gastos
+    const totalElementos = document.getElementById('totalGastos');
 
-//     //1.creacion de una lista HTML con JS
-//     let htmlLista = '';
-//     let totalGastos = 0;
-//     listaNombresGastos.forEach((elemento,posicion) => {
+    //1.creacion de una lista HTML con JS
+    let htmlLista = '';
+    let totalGasto = 0;
+    listaNombresGastos.forEach((elemento,posicion) => {
          
-//        const valorGasto = Number(listaValoresGastos[posicion]);
-//        //ensena la informacion agregada en la pagina principal 
-//         htmlLista += `<li>${elemento} - USD ${valorGasto.toFixed(2)}
-//         <button onclick="eliminarGasto(${posicion});">Eliminar</button>
-//         </li>`;
-//      //2.suma el total gastos
-//      totalGastos += Number(valorGasto);
-//     })
-//     //1.sustitucion de la lista en el HTML por el creado en JS
-//     listaElementos.innerHTML = htmlLista;
-//     //2.sustitucion de la suma total en el HTML por el creado en JS
-//     totalElementos.innerHTML = totalGastos.toFixed(2);
-//     limpiar();
-// }
-// //limpia las casillas de registro
-// function limpiar(){
-//     document.getElementById('nombreGasto').value = '';
-//     document.getElementById('valorGasto').value = '';
-// }
-// //elimina elemento seleccionado
-// function eliminarGasto(posicion){
-//     listaNombresGastos.splice(posicion,1);
-//     listaValoresGastos.splice(posicion,1);
-//     actualizarListasGastos();
-// }
+       const valorGasto = Number(listaValoresGastos[posicion]);
+       //ensena la informacion agregada en la pagina principal 
+        htmlLista += `<li>${elemento} - USD ${valorGasto.toFixed(2)}
+        <button onclick="eliminarGasto(${posicion});">Eliminar</button>
+        </li>`
+     //2.suma el total gastos
+     totalGasto += Number(valorGasto);
+     console.log(totalGasto);
+    })
+    //1.sustitucion de la lista en el HTML por el creado en JS
+    listaElementos.innerHTML = htmlLista;
+    //2.sustitucion de la suma total en el HTML por el creado en JS
+    totalElementos.innerHTML = totalGasto.toFixed(2);
+    limpiar();
+}
+//limpia las casillas de registro
+function limpiar(){
+    document.getElementById('nombreGasto').value = '';
+    document.getElementById('valorGasto').value = '';
+}
+//elimina elemento seleccionado
+function eliminarGasto(posicion){
+    listaNombresGastos.splice(posicion,1);
+    listaValoresGastos.splice(posicion,1);
+    actualizarListasGastos();
+}
