@@ -20,7 +20,7 @@ function actualizarListasGastos(){
 
     //1.creacion de una lista HTML con JS
     let htmlLista = '';
-    let totalGastos = 0.00;
+    let totalGastos = 0;
     listaNombresGastos.forEach((elemento,posicion) => {
        const valorGasto = Number(listaValoresGastos[posicion]);
        //enseña la informacion agregada en la pagina principal 
