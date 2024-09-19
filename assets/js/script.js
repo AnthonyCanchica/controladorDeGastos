@@ -3,9 +3,10 @@ let listaValoresGastos = [];
 
 //accion del boton AGREGAR GASTO
 function clickBoton(){
-    // let nombreGasto = document.getElementById('nombreGasto').value;
-    // let valorGasto = document.getElementById('valorGasto').value;
-    
+    let nombreGasto = document.getElementById('nombreGasto').value;
+    let valorGasto = document.getElementById('valorGasto').value;
+    console.log(nombreGasto);
+    console.log(valorGasto);
     
     // listaNombresGastos.push(nombreGasto);
     // listaValoresGastos.push(valorGasto);
