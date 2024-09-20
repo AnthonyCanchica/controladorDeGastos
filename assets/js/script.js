@@ -30,6 +30,11 @@ function actualizarListasGastos(){
        const valorGasto = Number(listaValoresGastos[posicion]);
        //ensena la informacion agregada en la pagina principal 
         htmlLista += `<li>${elemento} - USD ${valorGasto.toFixed(2)}
+
+       //boton editar
+        <button onclick="editarGasto(${posicion});">Editar</button>
+
+        //boton eliminar
         <button onclick="eliminarGasto(${posicion});">Eliminar</button>
         </li>`
      //2.suma el total gastos
@@ -52,4 +57,9 @@ function eliminarGasto(posicion){
     listaNombresGastos.splice(posicion,1);
     listaValoresGastos.splice(posicion,1);
     actualizarListasGastos();
+}
+//edita gasto seleccionado
+function editarGasto(posicion){
+    const cajaNombreGasto =  document.getElementById('nombreGasto');
+    const cajaValorGasto = document.getElementById('valorGasto');
 }
